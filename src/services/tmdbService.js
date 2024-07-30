@@ -32,7 +32,14 @@ export async function getPopular() {
 export async function getMovieDetails(id) {
 	try {
 		const response = await tmdb.get(`/movie/${id}`);
-		return response.data;
+		const data = response.data;
+
+		return {
+			...data,
+			poster: data.poster_path
+				? `https://image.tmdb.org/t/p/w500${data.poster_path}`
+				: null,
+		};
 	} catch (error) {
 		console.error(`Error fetching movie with id ${id}:`, error);
 		throw error;

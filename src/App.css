@@ -113,7 +113,7 @@
 	margin: 0 auto;
 }
 
-.homepage {
+.home-page {
 	display: flex;
 	flex-direction: column;
 	padding-block: 2rem;
@@ -257,4 +257,129 @@ footer {
 
 .links img {
 	width: 40px;
+}
+
+.movie-details-page {
+	font-family: "Afacad", Cambria, Cochin, Georgia, Times, "Times New Roman",
+		serif;
+
+	.overview {
+		display: flex;
+		flex-direction: column;
+		margin-top: 2rem;
+		/* gap: 3rem; */
+		/* padding-inline: 3rem; */
+
+		@media (min-width: 750px) {
+			flex-direction: row;
+		}
+
+		.poster {
+			position: relative;
+			width: max-content;
+			height: max-content;
+			margin: 0 auto;
+
+			img {
+				margin: 0 auto;
+				width: 320px;
+				height: 500px;
+				object-fit: cover;
+			}
+
+			.rating {
+				position: absolute;
+				background-color: rgb(229, 255, 0);
+				/* opacity: 0.95; */
+				width: 5rem;
+				height: 5rem;
+				border-radius: 50%;
+				right: -20px;
+				bottom: -25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 2rem;
+				color: black;
+				font-weight: bold;
+				border: 5px black solid;
+			}
+		}
+
+		.info {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+			height: max-content;
+
+			@media (min-width: 750px) {
+				padding-inline: 3rem;
+			}
+
+			.title {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+
+				h1 {
+					margin-bottom: 0;
+				}
+
+				h4 {
+					margin-top: 5px;
+				}
+			}
+
+			.tagline {
+				margin: 0 auto;
+			}
+
+			.genres {
+				gap: 2rem;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+				padding-bottom: 2rem;
+
+				.genrePod {
+					align-items: center;
+					width: fit-content;
+					padding-inline: 1.2rem;
+					height: 3rem;
+					background-color: rgb(204, 33, 33);
+					border-radius: 3px;
+					color: white;
+					font-weight: bold;
+					font-size: 1.2rem;
+				}
+			}
+
+			.money {
+				display: flex;
+				gap: 1rem;
+				color: #333;
+				/* font-size: 0.8rem; */
+				/* justify-content: center; */
+
+				* {
+					border: 2px solid rgb(133, 133, 133);
+					border-radius: 3px;
+					width: fit-content;
+					padding: 1px 4px;
+				}
+
+				.budget {
+					background-color: rgba(255, 0, 0, 0.288);
+				}
+
+				.revenue {
+					background-color: rgba(0, 47, 255, 0.226);
+				}
+
+				.profit {
+					background-color: rgba(136, 255, 0, 0.288);
+				}
+			}
+		}
+	}
 }

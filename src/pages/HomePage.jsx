@@ -25,7 +25,7 @@ const HomePage = () => {
 	}, []);
 
 	return (
-		<div className="homepage">
+		<div className="home-page">
 			{error ? (
 				<p>{error}</p>
 			) : (
