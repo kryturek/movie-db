@@ -63,7 +63,7 @@ const MovieDetailsPage = () => {
 								Revenue: {formatCurrency(details.revenue)}
 							</p>
 							<p className="profit">
-								{formatCurrency(details.revenue - details.budget) > 0
+								{details.revenue - details.budget > 0
 									? "Profit:"
 									: "Loss:"}
 								{formatCurrency(details.revenue - details.budget)}
