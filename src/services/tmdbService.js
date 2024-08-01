@@ -45,3 +45,14 @@ export async function getMovieDetails(id) {
 		throw error;
 	}
 }
+
+export async function getSimilar(id) {
+	try {
+		const response = tmdb.get(`/movie/${id}/similar`);
+		const data = response.data;
+
+		return data;
+	} catch (error) {
+		console.error("Error fetching info about similar movies: ", error);
+	}
+}

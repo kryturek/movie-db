@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import MovieList from "../components/MovieList";
 import { getTopRated, getPopular } from "../services/tmdbService.js";
+import GenreListNav from "../components/GenreListNav.jsx";
+import SearchSection from "../components/SearchSection.jsx";
 
-const HomePage = () => {
+const HomePage = ({ genreList }) => {
 	const [topRated, setTopRated] = useState([]);
 	const [popular, setPopular] = useState([]);
 	const [error, setError] = useState("");
@@ -30,6 +32,8 @@ const HomePage = () => {
 				<p>{error}</p>
 			) : (
 				<>
+					<SearchSection />
+					<GenreListNav genreList={genreList} />
 					<MovieList genre="Popular" movies={popular} />
 					<MovieList genre="Top of All Time" movies={topRated} />
 				</>
