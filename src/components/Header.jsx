@@ -1,7 +1,6 @@
 import React from "react";
 import logoIcon from "/movie-camera-svgrepo-com.svg";
 import menuIcon from "/menu-svgrepo-com.svg";
-import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -12,11 +11,20 @@ const Header = () => {
 				<span>MovieDB</span>
 			</Link>
 
-			<SearchBar />
+			<div className="menu">
+				<div className="sign">
+					<Link to="/login" className="sign-btn">
+						Sign in
+					</Link>
+					<Link to="/register" className="sign-btn">
+						Sign up
+					</Link>
+				</div>
 
-			<a href="#" className="menu">
-				<img src={menuIcon} alt="Menu" />
-			</a>
+				<Link>
+					<img src={menuIcon} alt="Menu" />
+				</Link>
+			</div>
 		</div>
 	);
 };

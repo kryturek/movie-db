@@ -5,6 +5,8 @@ import "./App.css";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
 	const [genreList, setGenreList] = useState([]);
@@ -38,6 +40,8 @@ function App() {
 					<Route path="/" element={<Layout />}>
 						<Route index element={<HomePage genreList={genreList} />} />
 						<Route path="/movie/:id" element={<MovieDetailsPage />} />
+						<Route path="/login" element={<LoginPage />} />
+						<Route path="/register" element={<RegisterPage />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>

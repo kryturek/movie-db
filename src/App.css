@@ -36,6 +36,33 @@
 	grid-template-rows: 7rem;
 	gap: 1rem;
 	align-items: center;
+
+	.menu {
+		display: flex;
+		color: black;
+		align-items: center;
+		gap: 3rem;
+
+		.sign {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.sign-btn {
+			text-shadow: 0 0 40px white;
+			width: 60px;
+			color: #333;
+			font-size: 1.2rem;
+
+			&:hover {
+				font-weight: bold;
+			}
+
+			@media (max-width: 650px) {
+				display: none;
+			}
+		}
+	}
 }
 
 .logo {
@@ -190,10 +217,21 @@
 	.genre {
 		width: fit-content;
 		padding: 0.7rem 1.5rem;
-		background-color: var(--accent);
+		/* background-color: var(--accent); */
+		background-color: gray;
 		font-size: 1.2rem;
-		color: #ddd;
+		color: white;
 		border-radius: 3px;
+		transition: background-color 200ms;
+
+		&:hover {
+			background-color: var(--accent);
+			cursor: pointer;
+		}
+
+		@media (max-width: 650px) {
+			display: none;
+		}
 	}
 }
 
@@ -438,6 +476,7 @@ footer {
 		align-items: center;
 		cursor: pointer;
 		transition: opacity 300ms;
+		border: none;
 
 		img {
 			width: 1.5rem;
@@ -445,6 +484,61 @@ footer {
 
 		&:hover {
 			opacity: 0.88;
+		}
+	}
+}
+
+.sign-page-wrapper {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		width: clamp(300px, 32vw, 27rem);
+		gap: 1.6rem;
+
+		input {
+			box-sizing: border-box;
+			/* background-color: #eee; */
+			background-color: transparent;
+			border: 1px #ccc solid;
+			color: black;
+			font-size: 1rem;
+		}
+
+		button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.2rem;
+			color: #ddd;
+			cursor: pointer;
+			border: none;
+
+			&:hover {
+				background-color: #414141;
+				color: white;
+			}
+		}
+
+		input,
+		button {
+			width: 100%;
+			height: 2rem;
+			border-radius: 20px;
+			padding: 1.3rem 1rem;
+		}
+
+		span {
+			display: inline-block;
+			text-align: center;
+
+			.link {
+				display: inline;
+			}
 		}
 	}
 }
