@@ -8,6 +8,7 @@
 	/* background-color: #242424; */
 	/* background-color: var(--background); */
 	background-color: rgb(243, 212, 217);
+	/* background-color: rgba(22, 53, 156, 0.568); */
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -29,6 +30,13 @@ body,
 	margin: 0 auto;
 	padding: 0;
 	box-sizing: border-box;
+	/* overflow-x: none; */
+}
+
+.content::before {
+	height: 100px;
+	width: 100px;
+	background-color: #213547;
 }
 
 a {

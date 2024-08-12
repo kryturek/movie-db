@@ -28,6 +28,10 @@
 	}
 }
 
+.profile-wrapper {
+	display: none;
+}
+
 .header {
 	background-color: var(--primary);
 	background-image: linear-gradient(to top, var(--primary), #485ab3b6);
@@ -50,9 +54,9 @@
 
 		.sign-btn {
 			text-shadow: 0 0 40px white;
-			width: 60px;
+			width: 80px;
 			color: #333;
-			font-size: 1.2rem;
+			font-size: 1.4rem;
 
 			&:hover {
 				font-weight: bold;
@@ -61,6 +65,15 @@
 			@media (max-width: 650px) {
 				display: none;
 			}
+
+			img {
+				width: 1.6rem;
+				margin-right: 5px;
+			}
+		}
+
+		.username {
+			color: black;
 		}
 	}
 }
@@ -515,8 +528,11 @@ footer {
 			align-items: center;
 			font-size: 1.2rem;
 			color: #ddd;
-			cursor: pointer;
 			border: none;
+		}
+
+		.enabled {
+			cursor: pointer;
 
 			&:hover {
 				background-color: #414141;
@@ -539,6 +555,11 @@ footer {
 			.link {
 				display: inline;
 			}
+		}
+
+		.passwordFormError {
+			color: red;
+			font-weight: bold;
 		}
 	}
 }

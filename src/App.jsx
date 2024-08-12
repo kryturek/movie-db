@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import { UserContextProvider } from "./UserContext";
+
+axios.defaults.baseURL = "http://localhost:4000";
 
 function App() {
 	const [genreList, setGenreList] = useState([]);
@@ -35,16 +38,21 @@ function App() {
 
 	return (
 		<>
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Layout />}>
-						<Route index element={<HomePage genreList={genreList} />} />
-						<Route path="/movie/:id" element={<MovieDetailsPage />} />
-						<Route path="/login" element={<LoginPage />} />
-						<Route path="/register" element={<RegisterPage />} />
-					</Route>
-				</Routes>
-			</BrowserRouter>
+			<UserContextProvider>
+				<BrowserRouter>
+					<Routes>
+						<Route path="/" element={<Layout />}>
+							<Route
+								index
+								element={<HomePage genreList={genreList} />}
+							/>
+							<Route path="/movie/:id" element={<MovieDetailsPage />} />
+							<Route path="/login" element={<LoginPage />} />
+							<Route path="/register" element={<RegisterPage />} />
+						</Route>
+					</Routes>
+				</BrowserRouter>
+			</UserContextProvider>
 		</>
 	);
 }
