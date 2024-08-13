@@ -41,7 +41,9 @@ const Header = () => {
 					<div className="sign">
 						<Link to="/" className="sign-btn username">
 							<img className="avatar" src={userIcon} alt="user icon" />
-							{userInfo.username}
+							{userInfo.username.length > 12
+								? "user"
+								: userInfo.username}
 						</Link>
 						<Link onClick={logout} className="sign-btn">
 							Logout

@@ -34,7 +34,9 @@ const HomePage = ({ genreList }) => {
 				<p>{error}</p>
 			) : (
 				<>
-					{loggedIn && <span>Welcome {userInfo.username}</span>}
+					<div className="welcome">
+						{loggedIn && <span>Welcome back {userInfo.username}</span>}
+					</div>
 					<SearchSection />
 					<GenreListNav genreList={genreList} />
 					<MovieList genre="Popular" movies={popular} />

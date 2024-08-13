@@ -16,8 +16,8 @@ const RegisterPage = () => {
 		ev.preventDefault();
 
 		const response = await axios.post("/register", {
-			username,
-			email,
+			username: username.toLowerCase(),
+			email: email.toLowerCase(),
 			password,
 		});
 
