@@ -8,8 +8,10 @@ import axios from "axios";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import { UserContextProvider } from "./UserContext";
+import Profile from "./components/Profile";
 
 axios.defaults.baseURL = "http://localhost:4000";
+// axios.defaults.baseURL = "https://movie-db-backend-eight.vercel.app";
 
 function App() {
 	const [genreList, setGenreList] = useState([]);
@@ -49,6 +51,7 @@ function App() {
 							<Route path="/movie/:id" element={<MovieDetailsPage />} />
 							<Route path="/login" element={<LoginPage />} />
 							<Route path="/register" element={<RegisterPage />} />
+							<Route path="/profile" element={<Profile />} />
 						</Route>
 					</Routes>
 				</BrowserRouter>

@@ -27,7 +27,7 @@ const RegisterPage = () => {
 	}
 
 	if (redirect) {
-		return <Navigate to="/login" registered={true} />;
+		return <Navigate to="/login" state={{ justRegistered: true }} />;
 	}
 
 	return (
@@ -58,12 +58,12 @@ const RegisterPage = () => {
 					value={password2}
 					onChange={(ev) => setPassword2(ev.target.value)}
 				/>
-				{password !== password2 && password2.length > 2 && (
+				{password !== password2 && password2.length > 0 && (
 					<span className="passwordFormError">
 						&#10005; passwords must match
 					</span>
 				)}
-				{password.length > 4 && password.length < 8 && (
+				{password.length > 0 && password.length < 8 && (
 					<span className="passwordFormError">
 						&#10005; password must be at least 8 characters long
 					</span>

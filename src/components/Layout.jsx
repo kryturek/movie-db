@@ -7,7 +7,7 @@ import Profile from "./Profile";
 const Layout = () => {
 	return (
 		<div className="layout">
-			<Profile />
+			{/* <Profile /> */}
 			<Header />
 			<div className="content">
 				<Outlet />

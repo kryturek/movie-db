@@ -19,6 +19,7 @@ const SearchSection = () => {
 							params: {
 								api_key: import.meta.env.VITE_TMDB_API_KEY,
 								query: value,
+								include_adult: true,
 							},
 						}
 					);
@@ -56,15 +57,17 @@ const SearchSection = () => {
 						{suggestions.map((el, index) => (
 							<li key={index}>
 								{el.title} ({el.release_date.slice(0, 4)})
-								{/* {el.overview} */}
-								{console.log(el.release_date.slice(0, 4))}
 							</li>
 						))}
 					</ul>
 				)}
-				<button>
-					<img src={lupa} alt="" />
-				</button>
+				{value.length > 0 ? (
+					<button>&#10005;</button>
+				) : (
+					<button>
+						<img src={lupa} alt="" />
+					</button>
+				)}
 			</form>
 		</section>
 	);

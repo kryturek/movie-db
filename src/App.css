@@ -588,6 +588,15 @@ footer {
 			padding: 1.3rem 1rem;
 		}
 
+		.sign-page-info {
+			box-sizing: border-box;
+			padding-block: 2rem;
+			font-weight: bold;
+			font-size: 1.2rem;
+			color: white;
+			background-color: darkgreen;
+		}
+
 		span {
 			display: inline-block;
 			text-align: center;

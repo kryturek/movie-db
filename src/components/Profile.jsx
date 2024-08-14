@@ -7,7 +7,7 @@ const Profile = () => {
 
 	useEffect(() => {
 		const fetchProfile = async () => {
-			const response = await axios.get("http://localhost:4000/profile", {
+			const response = await axios.get("/profile", {
 				withCredentials: true,
 			});
 			if (response.status === 200) {

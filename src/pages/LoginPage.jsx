@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../UserContext";
 
-const LoginPage = ({ registered }) => {
+const LoginPage = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [data, setData] = useState({});
@@ -11,6 +11,10 @@ const LoginPage = ({ registered }) => {
 	const [redirect, setRedirect] = useState(false);
 
 	const { setUserInfo, setLoggedIn } = useContext(UserContext);
+	const location = useLocation();
+
+	const justRegistered = location.state?.justRegistered;
+	// const justRegistered = true;
 
 	async function login(ev) {
 		ev.preventDefault();
@@ -47,6 +51,12 @@ const LoginPage = ({ registered }) => {
 		<div className="sign-page-wrapper">
 			<form onSubmit={login}>
 				{error && <span>{error}</span>}
+				{justRegistered && (
+					<div className="sign-page-info">
+						<span>Registration successful! You can login now!</span>
+					</div>
+				)}
+				{console.log(justRegistered)}
 				<input
 					type="text"
 					placeholder="Username"
