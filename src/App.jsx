@@ -28,6 +28,8 @@ function App() {
 				);
 
 				setGenreList(response.data.genres);
+				{
+				}
 			} catch (error) {
 				setError(error);
 				console.error("Error loading list of genres:", error);
