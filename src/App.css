@@ -533,6 +533,9 @@ footer {
 		li {
 			cursor: pointer;
 			padding: 0.6rem;
+			color: #333;
+
+			border-bottom: 1px rgb(236, 236, 236) solid;
 
 			&:hover {
 				background-color: #ddd;
