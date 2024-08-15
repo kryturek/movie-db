@@ -10,8 +10,8 @@ import RegisterPage from "./pages/RegisterPage";
 import { UserContextProvider } from "./UserContext";
 import Profile from "./components/Profile";
 
-axios.defaults.baseURL = "http://localhost:4000";
-// axios.defaults.baseURL = "https://movie-db-backend-eight.vercel.app";
+axios.defaults.baseURL =
+	import.meta.env.VITE_AXIOS_BASE_URL || "http://localhost:4000";
 
 function App() {
 	const [genreList, setGenreList] = useState([]);
