@@ -56,6 +56,7 @@ function App() {
 							<Route path="/register" element={<RegisterPage />} />
 							<Route path="/profile" element={<Profile />} />
 							<Route path="/movies/:genre" element={<Movies />} />
+							<Route path="/collection/:name" element={<Movies />} />
 						</Route>
 					</Routes>
 				</BrowserRouter>
