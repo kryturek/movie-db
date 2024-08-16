@@ -28,7 +28,7 @@ const SearchSection = () => {
 						}
 					);
 
-					setSuggestions(response.data.results.slice(0, 5));
+					setSuggestions(response.data.results.slice(0, 7));
 				} catch (error) {}
 			} else {
 				setSuggestions([]);

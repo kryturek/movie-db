@@ -283,6 +283,7 @@
 		flex-direction: column;
 		justify-content: center;
 		/* border: 2px solid red; */
+		text-align: center;
 	}
 
 	img {
@@ -296,6 +297,7 @@
 		height: 4rem;
 		width: 90%;
 		margin: 1rem auto;
+		text-align: center;
 	}
 
 	.rating {
@@ -340,6 +342,10 @@ footer {
 .movie-details-page {
 	font-family: "Afacad", Cambria, Cochin, Georgia, Times, "Times New Roman",
 		serif;
+
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
 
 	.overview {
 		display: flex;
@@ -614,4 +620,27 @@ footer {
 			font-weight: bold;
 		}
 	}
+}
+
+.movies-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding-bottom: 2rem;
+
+	h1 {
+		color: #333;
+	}
+}
+
+/* .movies-box {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+} */
+
+.movies-box {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 1rem;
 }

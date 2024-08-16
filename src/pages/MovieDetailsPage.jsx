@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getMovieDetails } from "../services/tmdbService";
+import { Link, useParams } from "react-router-dom";
+import {
+	getCollection,
+	getMovieDetails,
+	getSimilar,
+} from "../services/tmdbService";
 import formatCurrency from "../lib/formatCurrency";
+import MovieCard from "../components/MovieCard";
 
 const MovieDetailsPage = () => {
 	const { id } = useParams();
 
 	const [loading, setLoading] = useState(true);
 	const [details, setDetails] = useState({});
+	const [similarMovies, setSimilarMovies] = useState([]);
 
 	useEffect(() => {
 		async function fetchDetails() {
@@ -17,6 +23,18 @@ const MovieDetailsPage = () => {
 		}
 
 		fetchDetails();
+	}, [id]);
+
+	useEffect(() => {
+		async function fetchSimilar() {
+			const response = await getSimilar(id);
+
+			const array = response.results.slice(0, 6);
+
+			setSimilarMovies(array);
+		}
+
+		fetchSimilar();
 	}, [id]);
 
 	if (loading) {
@@ -54,6 +72,13 @@ const MovieDetailsPage = () => {
 					<p>Released on {details.release_date}</p>
 					<h2 className="tagline">{details.tagline}</h2>
 					<p>{details.overview}</p>
+					{details.belongs_to_collection && (
+						<Link
+							to={`/collection/${details.belongs_to_collection.name}`}
+						>
+							{details.belongs_to_collection.name}
+						</Link>
+					)}
 					{details.budget && details.revenue ? (
 						<div className="money">
 							<p className="budget">
@@ -74,6 +99,27 @@ const MovieDetailsPage = () => {
 					)}
 				</div>
 			</div>
+			{console.log(details)}
+			{similarMovies.length > 0 && (
+				<div className="movies-wrapper">
+					<h2>Similar movies</h2>
+					<div className="movies-box">
+						{similarMovies.map((movie) => {
+							return (
+								<MovieCard
+									key={movie.id}
+									id={movie.id}
+									title={movie.title}
+									image={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+									desc={movie.overview}
+									rating={movie.vote_average}
+									voteCount={movie.vote_count}
+								/>
+							);
+						})}
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };

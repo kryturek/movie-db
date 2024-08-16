@@ -14,7 +14,6 @@ const LoginPage = () => {
 	const location = useLocation();
 
 	const justRegistered = location.state?.justRegistered;
-	// const justRegistered = true;
 
 	async function login(ev) {
 		ev.preventDefault();
@@ -56,7 +55,6 @@ const LoginPage = () => {
 						<span>Registration successful! You can login now!</span>
 					</div>
 				)}
-				{console.log(justRegistered)}
 				<input
 					type="text"
 					placeholder="Username"
