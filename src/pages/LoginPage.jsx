@@ -22,7 +22,7 @@ const LoginPage = () => {
 			const response = await axios.post(
 				"/login",
 				{ username: username.toLowerCase(), password },
-				{ withCredentials: true }
+				{ withCredentials: false }
 			);
 			if (response.status >= 400) {
 				throw err;
