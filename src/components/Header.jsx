@@ -5,6 +5,7 @@ import userIcon from "/user-alt-1-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import axios from "axios";
+import Profile from "./Profile";
 
 const Header = () => {
 	const { userInfo, setUserInfo, loggedIn, setLoggedIn } =
@@ -22,6 +23,7 @@ const Header = () => {
 
 	return (
 		<div className="header">
+			<Profile />
 			<Link className="logo" to="/">
 				<img src={logoIcon} alt="Logo" />
 				<span>MovieDB</span>

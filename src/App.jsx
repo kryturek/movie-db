@@ -54,7 +54,7 @@ function App() {
 							<Route path="/movie/:id" element={<MovieDetailsPage />} />
 							<Route path="/login" element={<LoginPage />} />
 							<Route path="/register" element={<RegisterPage />} />
-							<Route path="/profile" element={<Profile />} />
+							{/* <Route path="/profile" element={<Profile />} /> */}
 							<Route path="/movies/:genre" element={<Movies />} />
 							<Route path="/collection/:name" element={<Movies />} />
 						</Route>
