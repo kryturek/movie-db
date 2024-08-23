@@ -1,6 +1,6 @@
 #root {
 	display: flex;
-	max-width: 1200px;
+	max-width: 1250px;
 	justify-content: center;
 	background-color: var(--background);
 }
@@ -293,7 +293,7 @@
 
 	.title {
 		display: inline-block;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		height: 4rem;
 		width: 90%;
 		margin: 1rem auto;
@@ -641,6 +641,7 @@ footer {
 
 .movies-box {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	/* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+	grid-template-columns: repeat(auto-fit, 170px);
 	gap: 1rem;
 }

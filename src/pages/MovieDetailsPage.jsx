@@ -7,6 +7,7 @@ import {
 } from "../services/tmdbService";
 import formatCurrency from "../lib/formatCurrency";
 import MovieCard from "../components/MovieCard";
+import noPoster from "/no-poster.png";
 
 const MovieDetailsPage = () => {
 	const { id } = useParams();
@@ -29,7 +30,7 @@ const MovieDetailsPage = () => {
 		async function fetchSimilar() {
 			const response = await getSimilar(id);
 
-			const array = response.results.slice(0, 6);
+			const array = response.results.slice(0, 5);
 
 			setSimilarMovies(array);
 		}
@@ -45,7 +46,10 @@ const MovieDetailsPage = () => {
 		<div className="movie-details-page">
 			<div className="overview">
 				<div className="poster">
-					<img src={details.poster} alt={`Poster of ${details.title}`} />
+					<img
+						src={details.poster ? details.poster : noPoster}
+						alt={`Poster of ${details.title}`}
+					/>
 					<div className="rating">
 						{Math.round(details.vote_average * 10)}%
 					</div>
@@ -73,9 +77,7 @@ const MovieDetailsPage = () => {
 					<h2 className="tagline">{details.tagline}</h2>
 					<p>{details.overview}</p>
 					{details.belongs_to_collection && (
-						<Link
-							to={`/collection/${details.belongs_to_collection.name}`}
-						>
+						<Link to={`/collection/${details.belongs_to_collection.id}`}>
 							{details.belongs_to_collection.name}
 						</Link>
 					)}
@@ -110,7 +112,11 @@ const MovieDetailsPage = () => {
 									key={movie.id}
 									id={movie.id}
 									title={movie.title}
-									image={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+									image={
+										movie.poster_path
+											? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+											: null
+									}
 									desc={movie.overview}
 									rating={movie.vote_average}
 									voteCount={movie.vote_count}

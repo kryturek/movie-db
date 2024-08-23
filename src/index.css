@@ -15,11 +15,12 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	--primary: #3c91e6ff; /* Tufts Blue */
-	--secondary: #2e534d; /* Puce */
-	--accent: #342e37ff; /* Raisin Black */
-	--background: #fafffdff; /* Baby Powder */
-	--highlight: #e21111c0; /* Princeton Orange */
+	/* --primary: #3c91e6ff; */
+	--primary: rgba(56, 94, 131, 0.542);
+	--secondary: #2e534d;
+	--accent: #342e37ff;
+	--background: #fafffdff;
+	--highlight: #e21111c0;
 }
 
 html,

@@ -103,16 +103,16 @@ export async function getByGenre(genre) {
 	}
 }
 
-export async function getCollection(name) {
+export async function getCollection(id) {
 	try {
-		const response = await tmdb.get("/search/collection", {
+		const response = await tmdb.get(`/collection/${id}`, {
 			params: {
-				query: name,
 				include_adult: true,
 			},
 		});
-		console.log(response.data);
+		return response.data;
 	} catch (error) {
 		console.error(error);
+		throw error;
 	}
 }

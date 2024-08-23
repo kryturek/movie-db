@@ -10,6 +10,7 @@ import RegisterPage from "./pages/RegisterPage";
 import { UserContextProvider } from "./UserContext";
 import Profile from "./components/Profile";
 import Movies from "./pages/Movies";
+import Collection from "./pages/Collection";
 
 axios.defaults.baseURL =
 	import.meta.env.VITE_AXIOS_BASE_URL || "http://localhost:4000";
@@ -54,9 +55,8 @@ function App() {
 							<Route path="/movie/:id" element={<MovieDetailsPage />} />
 							<Route path="/login" element={<LoginPage />} />
 							<Route path="/register" element={<RegisterPage />} />
-							{/* <Route path="/profile" element={<Profile />} /> */}
 							<Route path="/movies/:genre" element={<Movies />} />
-							<Route path="/collection/:name" element={<Movies />} />
+							<Route path="/collection/:id" element={<Collection />} />
 						</Route>
 					</Routes>
 				</BrowserRouter>
