@@ -40,6 +40,7 @@
 	grid-template-rows: 7rem;
 	gap: 1rem;
 	align-items: center;
+	margin-bottom: 2rem;
 
 	.menu {
 		display: flex;
@@ -75,6 +76,14 @@
 		.username {
 			color: black;
 			width: fit-content;
+		}
+
+		.hamburger {
+			display: none;
+
+			@media (max-width: 650px) {
+				display: block;
+			}
 		}
 	}
 }
@@ -267,7 +276,7 @@
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	width: 170px;
+	width: 160px;
 	flex-shrink: 0;
 	color: var(--accent);
 	transition: box-shadow 150ms;
@@ -378,7 +387,7 @@ footer {
 				width: 5rem;
 				height: 5rem;
 				border-radius: 50%;
-				right: -20px;
+				right: -40px;
 				bottom: -25px;
 				display: flex;
 				justify-content: center;
@@ -387,6 +396,41 @@ footer {
 				color: black;
 				font-weight: bold;
 				border: 5px black solid;
+			}
+
+			.addToFav-btn {
+				position: absolute;
+				background-color: rgb(227, 220, 221);
+				/* opacity: 0.65; */
+				width: 5rem;
+				height: 5rem;
+				border-radius: 50%;
+				right: -40px;
+				top: -25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 3.4rem;
+				color: rgb(255, 255, 255);
+				font-weight: bold;
+				border: 5px rgb(0, 0, 0) solid;
+				transition: all 200ms;
+
+				.heart-icon {
+					width: 3.4rem;
+					height: 3.4rem;
+				}
+
+				&:hover {
+					cursor: pointer;
+					border: 5px rgb(87, 18, 18) solid;
+					background-color: rgb(218, 111, 130);
+				}
+			}
+
+			.added {
+				/* opacity: 1; */
+				background-color: #ff0000;
 			}
 		}
 
@@ -642,6 +686,6 @@ footer {
 .movies-box {
 	display: grid;
 	/* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
-	grid-template-columns: repeat(auto-fit, 170px);
+	grid-template-columns: repeat(auto-fit, 160px);
 	gap: 1rem;
 }

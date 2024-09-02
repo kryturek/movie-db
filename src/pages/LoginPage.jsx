@@ -32,6 +32,7 @@ const LoginPage = () => {
 				setUserInfo({
 					username: response.data.username,
 					id: response.data.id,
+					favorites: response.data.favorites,
 				});
 				setLoggedIn(true);
 				setRedirect(true);

@@ -53,7 +53,7 @@ const Header = () => {
 					</div>
 				)}
 
-				<Link>
+				<Link className="hamburger">
 					<img src={menuIcon} alt="Menu" />
 				</Link>
 			</div>
